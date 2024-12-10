@@ -4,3 +4,4 @@ checkpoint
 *.txt
 *.bin
 *.pkl
+/Data
