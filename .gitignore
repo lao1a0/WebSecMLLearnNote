@@ -1,7 +1,1 @@
-checkpoint
-*.doc
-*.docx
-*.txt
-*.bin
-*.pkl
-/Data
+Data/
