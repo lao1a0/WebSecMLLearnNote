@@ -1,0 +1,1 @@
+from gym_spam.envs.spamEnv import SpamEnv_v0
