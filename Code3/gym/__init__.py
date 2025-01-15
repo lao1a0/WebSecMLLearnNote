@@ -1,18 +1,6 @@
-"""Root __init__ of the gym module setting the __all__ of gym modules."""
-# isort: skip_file
-
-from gym import error
-from gym.version import VERSION as __version__
-
-from gym.core import (
-    Env,
-    Wrapper,
-    ObservationWrapper,
-    ActionWrapper,
-    RewardWrapper,
-)
+from gym import Env, Wrapper, ObservationWrapper, ActionWrapper, RewardWrapper
 from gym.spaces import Space
-from gym.envs import make, spec, register
+from gym.envs.registration import make, spec, register
 from gym import logger
 from gym import vector
 from gym import wrappers
@@ -33,6 +21,7 @@ os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 
 try:
     import gym_notices.notices as notices
+    from gym import __version__
 
     # print version warning if necessary
     notice = notices.notices.get(__version__)
